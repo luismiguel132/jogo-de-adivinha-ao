@@ -11,8 +11,8 @@ function iniciarGame(){
 function EnviarPalpite() {
   const nEscolhido = parseInt(document.getElementById("guessInput").value)
 
-  if (nEscolhido < 1 ||  nEscolhido > 10) {
-    document.getElementById("feedback").innerHTML = '<div class="alert alert-danger">Por favor, insira um número entre 1 a 10.</div>'
+  if (nEscolhido < 1 ||  nEscolhido > 100) {
+    document.getElementById("feedback").innerHTML = '<div class="alert alert-danger">Por favor, insira um número entre 1 a 100.</div>'
     return
   }
 
