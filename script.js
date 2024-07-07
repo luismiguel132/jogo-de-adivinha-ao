@@ -1,5 +1,8 @@
 var nSorteado;
 var tentativas;
+var totalTentativas = 0;
+var rodadas = 0;
+var medias;
 
 function iniciarGame(){
   nSorteado = Math.floor(Math.random() * 100) + 1;
@@ -20,6 +23,9 @@ function EnviarPalpite() {
 
   if (nSorteado === nEscolhido) {
     document.getElementById("feedback").innerHTML =`<div class="alert alert-success">Parabens você acertou em ${tentativas} tentativas.</div>`
+    totalTentativas+= tentativas;
+    rodadas++;
+    exibirMedia()
   } else if (nEscolhido < nSorteado){
      document.getElementById("feedback").innerHTML ='<div class="alert alert-warning">Chute mais alto</div>'
   } else if(nEscolhido > nSorteado){
@@ -33,6 +39,12 @@ function resetGame() {
 }
 
 iniciarGame()
+
+function exibirMedia() {
+  var mediaT = totalTentativas/rodadas
+  
+  document.getElementById("media").innerHTML = `<div class="alert alert-dark"> a sua media de temtativas para acertar é:${mediaT}</div>`
+}
 
 
 // Jogo de Adivinhação de Números
