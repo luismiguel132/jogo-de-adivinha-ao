@@ -2,7 +2,7 @@ var nSorteado;
 var tentativas;
 
 function iniciarGame(){
-  nSorteado = Math.floor(Math.random() * 10) + 1;
+  nSorteado = Math.floor(Math.random() * 100) + 1;
   tentativas = 0;
   document.getElementById('feedback').innerHTML = '';
   document.getElementById('guessInput').value = '';
