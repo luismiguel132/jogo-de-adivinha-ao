@@ -42,8 +42,9 @@ iniciarGame()
 
 function exibirMedia() {
   var mediaT = totalTentativas/rodadas
-  
-  document.getElementById("media").innerHTML = `<div class="alert alert-dark"> a sua media de temtativas para acertar é:${mediaT}</div>`
+  if(rodadas >= 2) {
+    document.getElementById("media").innerHTML = `<div class="alert alert-dark"> Em ${rodadas} rodadas a sua média de tentativas para acertar é:${mediaT}</div>`
+  }
 }
 
 
